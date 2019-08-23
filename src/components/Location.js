@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import DisplayLocations from './DisplayLocations';
-import { fetchLocations, updateLocation, deleteLocation } from '../redux/actions/locationAction';
+import { fetchLocations, fetchALocation, deleteLocation } from '../redux/actions/locationAction';
 
 class Location extends Component {
   componentDidMount() {
@@ -10,13 +10,13 @@ class Location extends Component {
   }
 
   render() {
-    console.log(this.props)
     return(
-      <div>
+      <div className="locations">
         <h1>Locations</h1>
         <button
+          className='add-button'
           onClick={() => this.props.history.push('/form')}
-          >+ NEW LOCATION
+          ><span className="glyphicon glyphicon-plus action-icon"></span> NEW LOCATION
         </button>
         <hr />
         {
@@ -24,7 +24,9 @@ class Location extends Component {
          &&
          <DisplayLocations
           locations={this.props.locations}
+          subLocations={this.props.subLocations}
           deleteLocation={this.props.deleteLocation}
+          fetchALocation={this.props.fetchALocation}
           history={this.props.history}
           />
         }
@@ -34,16 +36,16 @@ class Location extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state)
   const {
-    locations: { locations }
+    locations: { locations, subLocations }
   } = state;
-  return { locations }
+  return { locations, subLocations }
 }
 
 export default connect(
   mapStateToProps,
   {
     fetchLocations,
+    fetchALocation,
     deleteLocation
   })(Location);

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
+import '../node_modules/toastr/build/toastr.css';
 
 import Header from './components/Header';
 import Location from './components/Location';

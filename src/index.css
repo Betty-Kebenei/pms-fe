@@ -11,3 +11,46 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.location-list {
+  display: flex;
+  flex-direction: column;
+}
+.action-icon {
+  padding: 0 10px;
+}
+
+h1, .add-button {
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.sublocations {
+  margin: 20px 0 20px 20px;
+  box-shadow: inset 0 0 2px #000000;
+  padding: 20px;
+}
+
+.location-form {
+  text-align: center;
+}
+
+form {
+  margin: 20px;
+}
+
+@media only screen and (min-width: 650px) {
+  .locations {
+    width: 80%;
+    margin: auto;
+  }
+
+  .location-list {
+    flex-direction: row;
+  }
+  .item {
+    flex: 1;
+    padding: 0 10px;
+  }
+
+}
