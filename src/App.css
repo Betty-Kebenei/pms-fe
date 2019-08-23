@@ -1,5 +1,5 @@
-.App {
-  text-align: center;
+.App-pages {
+  padding: 40px 20px;;
 }
 
 .App-logo {
@@ -30,4 +30,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.header {
+  min-height: 50px;
+  background-color: #282c34;
+  color: antiquewhite;
+  font-weight: bold;
+  padding: 20px 0;
 }
